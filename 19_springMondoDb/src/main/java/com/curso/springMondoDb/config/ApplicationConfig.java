@@ -12,15 +12,15 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 import com.mongodb.MongoClient;
 
 @Configuration
-@ComponentScan(basePackages = "com.curso.springMondoDb")
+@ComponentScan(basePackages = "com.curso.springMondoDb") //escanea todo el proyecto
 public class ApplicationConfig {
 	
 
     @Bean
     public MongoDbFactory mongoDbFactory() throws Exception {
-        MongoClient mongoClient = new MongoClient("localhost", 27017);
+        MongoClient mongoClient = new MongoClient("localhost", 27017); // puerto mongodb
         //UserCredentials userCredentials = new UserCredentials("", "");
-        return new SimpleMongoDbFactory(mongoClient, "springMondoDb");
+        return new SimpleMongoDbFactory(mongoClient, "springMondoDb"); //nombre proyecto
     }
  
     @Bean
